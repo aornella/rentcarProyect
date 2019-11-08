@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RentCar</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/flexbox/flexboxgrid.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick-theme.css'%}">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css'%}">
+    <script src="https://kit.fontawesome.com/526e3964f3.js"></script>
+</head>
+<body>
+<aside id="aside">
+    <div class="aside-top container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-sm-10">
+                <h1 class="title">Full Elite AT Mazda 3, VW Virtus, Fiat Tipo o similar</h1>
+            </div>
+            <div class="col-xs-2 col-sm-2">
+                <i class="aside-close fas fa-times-circle f-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="aside-body">
+        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/mazda-3-400x256.jpg" alt="">
+        <div class="esp-s-title">
+            <h5 class="mb-0"><i class="fas fa-file-alt"></i> Especificaciones y sucursales</h5>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 mb-30">
+                    <table class="fs-12" style="width: 100%">
+                        <tr>
+                            <td><i class="fas fa-car"></i> Tipo</td>
+                            <td>Sedan, 4 Puertas</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-gas-pump"></i> Motor</td>
+                            <td>1.600 cc Gasolina</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-tools"></i> Transmisión</td>
+                            <td>Automática</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-shield-alt"></i> Seguridad</td>
+                            <td>Doble airbag, frenos ABS</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-wind"></i> Aire Acondicionado</td>
+                            <td>Sí</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-map-marked-alt"></i> Sucursales</td>
+                            <td>Airport, Bellavista y Las Condes</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-12 text-center">
+                    <a class="btn-primary"><i class="fas fa-paper-plane" aria-hidden="true"></i> Solicitar Vehiculo!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<header>
+    <div class="header-social container-fluid">
+        <div class="row">
+                <div class="col-xs-7 col-sm-7">
+                    <ul>
+                        <li class="mr-20"><i class="fa fa-phone mr-10"></i><a href="javascript:void(0)">+569 56949833</a></li>
+                        <li class="mr-20"><i class="fa fa-envelope mr-10"></i><a href="javascript:void(0)">contacto@rentcar.cl</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-5 col-sm-5">
+                    <ul class="f-right">
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-facebook"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-google"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div class="header-nav container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-sm-4">
+                <a href="javascript:void(0)" class="fs-30 fs-w900 text-default td-none"><span class="text-primary">Rent</span>Car</a>    
+            </div>
+            <div class="col-xs-2 col-sm-8 d-none">
+                <span id="btn-nav" class="f-right pt-6 c-pointer"><i class="fas fa-bars"></i></span>
+            </div>
+            <div id="nav-list" class="col-xs-12 col-sm-8 nav-list-h">
+                <nav class="navbar">    
+                    <ul class="navbar-menu">
+                        <li class="navbar-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#sec-novedades">Novedades</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#sec-servicios">Servicios</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#sec-otros">Otros Destacados</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="#sec-partners">Nuestros Socios</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="{% url 'login' %}">Ingresar</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+<footer>
+    <div id="footer-info">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">
+                    <h4>Nuestra Compañia</h4>
+                    <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.
+                    </p>
+                    <ul class="social pa-0">
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-google" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <h4>Nuestra Compañia</h4>
+                    <p>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet inimicu ut qui dolor oratio mnesarchum.
+                    </p>
+                    <ul class="social pa-0">
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-google" aria-hidden="true"></i></a></li>
+                        <li class="mr-5"><a href="javascript:void(0)"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <h4>Referencias</h4>
+                    <ul class="ref pa-0">
+                        <li class="mr-5"><a href="index.html">Inicio</a></li>
+                        <li class="mr-5"><a href="#sec-novedades">Novedades</a></li>
+                        <li class="mr-5"><a href="#sec-servicios">Servicios</a></li>
+                        <li class="mr-5"><a href="#sec-otros">Otros Desacados</a></li>
+                        <li class="mr-5"><a href="#sec-partners">Nuestros Socios</a></li>
+                        <li class="mr-5"><a href="javascript:void(0)">Ingresar</a></li>
+                        <li class="mr-5"><a href="javascript:void(0)">Registrate</a></li>
+                        <li class="mr-5"><a href="javascript:void(0)">Contactanos</a></li>
+                        <li class="mr-5"><a href="javascript:void(0)">Ref 01</a></li>
+                        <li class="mr-5"><a href="javascript:void(0)">Ref 02</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <h4>Contáctanos</h4>
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-2">
+                            <i class="fas fa-map-marker-alt iesp"></i>
+                        </div>
+                        <div class="col-xs-10 col-sm-10">
+                          <span>
+                            Visitanos:<br>
+                            8768 Lorem Ipsum, dolor sit amet, VA 12345
+                          </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-2">
+                            <i class="fas fa-phone-volume iesp"></i>
+                        </div>
+                        <div class="col-xs-10 col-sm-10">
+                            <span>
+                            LLamanos:<br>
+                            0 800 555 11 22
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-2">
+                            <i class="fas fa-envelope-open-text iesp"></i>
+                        </div>
+                        <div class="col-xs-10 col-sm-10">
+                            <span>          
+                            Nuestro Email:<br>
+                            contacto@rentcar.cl
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <a href="javascript:void(0)" class="mr-20">Política de privacidad</a>
+                    <a href="javascript:void(0)">Términos de Uso</a>
+                </div>
+                <div class="col-xs-12 col-sm-6 copyright">
+                    <span>Desarrollado por Angel Ornella y Joaquin Baeza - Team AJ Solutions</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="{% static 'assets/js/slick.js'%}" type="text/javascript"></script>
+<script src="{% static 'assets/js/main.js'%}" type="text/javascript"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.js'%}" type="text/javascript"></script>
+</body>
+</html>
