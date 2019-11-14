@@ -42,5 +42,29 @@ $(function () {
     nav.toggleClass('nav-list-h');
   });
 
+
+  $(document).on('click', '.action', function(){
+
+    var ob  = $(this);
+    var tok = $("[name='csrfmiddlewaretoken']")
+
+    $('<form action="'+ob.attr('data-url')+'" method="POST"/>')
+      .append($('<input type="hidden" name="vehiculo" value="' + ob.attr('data-val') + '">'))
+      .append($('<input type="hidden" name="csrfmiddlewaretoken" value="' + tok.val() + '">'))
+      .appendTo($(document.body)) //it has to be added somewhere into the <body>
+      .submit();
+  });
+
+
+
+
+
+
+
+
+
+
+
+
 });
 

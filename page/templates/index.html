@@ -38,118 +38,28 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 <hr class="bottom-line">
             </div>
-            <div class="col-xs-12 col-sm-3">
+            {% csrf_token %}
+            {% for var in vehiculos  %}
+             <div class="col-xs-12 col-sm-3">
                 <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/mazda-3-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/mazda-3-400x256.jpg" alt="">
+                    <a class="magnific-popup" href="{{ var.img }}">
+                        <img src="{{ var.img }}" alt="">
                     </a>
                     <div class="card-info">
-                        <h4>Full Elite AT</h4>
-                        <p>Mazda 3, VW Virtus, Fiat Tipo o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 420 LT.</span>
+                        <h4> {{ var.nombre }}</h4>
+                        <p> {{ var.descripcion }}</p>
+                        <span><i class="fas fa-users"></i>  {{ var.capacidad }} personas  <i class="fa fa-briefcase ml-5"></i>  {{ var.lt }}</span>
                         <br>
-                        <a href="javascript:void(0)" data-action="mazda-3-full-elite-AT" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
+                        {% if user.username %}
+                           <a href="javascript:void(0)" class="detalle action" data-url="{% url 'generar_solicitud'%}" data-val="{{ var.id }}"><i class="fa fa-caret-right"></i>Solicitar </a>
+                        {% else %}
+                           <a href="{% url 'login' %}" class="detalle"><i class="fa fa-caret-right"></i>Solicitar </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-swift-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-swift-400x256.jpg" alt="">
-                    </a>
-                    <div class="card-info">
-                        <h4>Compact</h4>
-                        <p>Suzuki Swift o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 210 LT.</span>
-                        <br>
-                        <a href="javascript:void(0)" data-action="susuki-swift-compact" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/renault-symbol-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/renault-symbol-400x256.jpg" alt="">
-                    </a>
-                    <div class="card-info">
-                        <h4>Economy</h4>
-                        <p>Renault Symbol, VW Voyage o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 370 LT.</span>
-                        <br>
-                        <a href="javascript:void(0)" data-action="economy" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-ciaz-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-ciaz-400x256.jpg" alt="">
-                    </a>
-                    <div class="card-info">
-                        <h4>Medium Elite AT</h4>
-                        <p>Suzuki Ciaz o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 389 LT.</span>
-                        <br>
-                        <a href="javascript:void(0)" data-action="medium-elite-at" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/10/brilliance-v3-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/10/brilliance-v3-400x256.jpg" alt="">
-                    </a>
-                    <div class="card-info">
-                        <h4>Crossover MT</h4>
-                        <p>Brilliance V3 o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 455 LT.</span>
-                        <br>
-                        <a href="javascript:void(0)" data-action="crossover-mt" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/10/brilliance-v3-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/10/brilliance-v3-400x256.jpg" alt="">
-                    </a>
-                    <div class="card-info">
-                        <h4>Crossover AT</h4>
-                        <p>Brilliance V3 o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 455 LT.</span>
-                        <br>
-                        <a href="javascript:void(0)" data-action="crossover-at" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-g-nomade-2wd-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-g-nomade-2wd-400x256.jpg" alt="">
-                    </a>
-                    <div class="card-info">
-                        <h4>SUV 4×2</h4>
-                        <p>Suzuki Grand Nomade o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 410 LT.</span>
-                        <br>
-                        <a href="javascript:void(0)" data-action="suv-4x2" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-                <div class="card">
-                    <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2019/04/nissan-xtrail-400x256.jpg">
-                        <img src="https://www.chileanrentacar.cl/wp-content/uploads/2019/04/nissan-xtrail-400x256.jpg" alt="">
-                    </a>
-                    <div class="card-info">
-                        <h4>SUV Elite 4×2</h4>
-                        <p>Nissan X-Trail o similar</p>
-                        <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 577 LT.</span>
-                        <br>
-                        <a href="javascript:void(0)" data-action="suv-elite-4x2" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
     </div>
 </section>
@@ -177,62 +87,7 @@
         </div>
     </div>
 </section>
-<section id="sec-otros" >
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 s-title">    
-                <h2>Otros Destacados</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <hr class="bottom-line">
-            </div>
-        </div>
-    </div>
-    <div class="regular slider">
-        <a href="javascript:void(0)" data-action="otro-1"><img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/renault-symbol-400x256.jpg"></a>
-        <a href="javascript:void(0)" data-action="otro-2"><img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-g-nomade-2wd-400x256.jpg"></a>
-        <a href="javascript:void(0)" data-action="otro-3"><img src="https://www.chileanrentacar.cl/wp-content/uploads/2019/04/nissan-xtrail-400x256.jpg"></a>
-        <a href="javascript:void(0)" data-action="otro-4"><img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/suzuki-ciaz-400x256.jpg"></a>
-        <a href="javascript:void(0)" data-action="otro-5"><img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/10/brilliance-v3-400x256.jpg"></a>
-        <a href="javascript:void(0)" data-action="otro-6"><img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/10/brilliance-v3-400x256.jpg"></a>
-    </div>
-</section>
-
-<section id="sec-partners">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 s-title">    
-                <h2>Nuestros Socios</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <hr class="bottom-line">
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <a target="_blank" href="detalle-sucursal.html">
-                    <img src="https://www.rosselot.cl/rent-a-car/wp-content/uploads/sites/5/2014/02/222-01.jpg" alt="" width="100%" style="max-height: 197px;">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <a target="_blank" href="detalle-sucursal.html">
-                    <img src="https://www.rosselot.cl/rent-a-car/wp-content/uploads/sites/5/2018/05/sucursal_vm.png" alt="" width="100%" style="max-height: 197px;">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <a target="_blank" href="detalle-sucursal.html">
-                    <img src="https://www.rosselot.cl/rent-a-car/wp-content/uploads/sites/5/2018/05/sucursal_vm.png" alt="" width="100%"style="max-height: 197px;">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <a target="_blank" href="detalle-sucursal.html">
-                    <img src="https://www.rosselot.cl/rent-a-car/wp-content/uploads/sites/5/2014/02/222-01.jpg" alt="" width="100%"style="max-height: 197px;">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <a target="_blank" href="detalle-sucursal.html">
-                    <img src="https://www.rosselot.cl/rent-a-car/wp-content/uploads/sites/5/2018/05/sucursal_vm.png" alt="" width="100%"style="max-height: 197px;">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>    
+   
 {% endblock %}
 
 
