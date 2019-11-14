@@ -1,0 +1,7 @@
+SUPER USER   
+rentcaradm   
+rentcaradm   
+----------------
+DEFAULT USER  
+rentcardefault
+ren1234567
