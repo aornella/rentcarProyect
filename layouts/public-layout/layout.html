@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RentCar</title>
-
+	
     <link rel="shortcut icon" type="image/png" href="{% static 'icon/favicon.ico' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/flexbox/flexboxgrid.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css'%}">
@@ -14,6 +14,7 @@
     
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/magnific-popup.css'%}">
+	
     <script src="https://kit.fontawesome.com/526e3964f3.js"></script>
 </head>
 <body>
@@ -104,9 +105,11 @@
                         <li class="navbar-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
                         <li class="navbar-item"><a class="nav-link" href="#sec-novedades">Novedades</a></li>
                         <li class="navbar-item"><a class="nav-link" href="#sec-servicios">Servicios</a></li>
-                        <li class="navbar-item"><a class="nav-link" href="#sec-otros">Otros Destacados</a></li>
-                        <li class="navbar-item"><a class="nav-link" href="#sec-partners">Nuestros Socios</a></li>
-                        <li class="navbar-item"><a class="nav-link" href="{% url 'login' %}">Ingresar</a></li>
+                        {% if user.username %}
+                           <li class="navbar-item"><a class="nav-link" href="{% url 'my-rentcar' %}">My-Rentcar</a></li>
+                        {% else %}
+                           <li class="navbar-item"><a class="nav-link" href="{% url 'login' %}">Ingresar</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </div>
