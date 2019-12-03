@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'page.apps.PageConfig',
     'accounts.apps.AccountsConfig',
 	'myrentcar.apps.MyrentcarConfig',
+    'apirest.apps.ApirestConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +143,9 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = 'my-rentcar'
 #Email Config Recover Password
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Rest Config
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
